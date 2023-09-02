@@ -8,7 +8,7 @@ Overall, the aim of developing a trachoma detector application is to leverage te
 
 # How Does It Work
 This model is trained with more than 1,500 pictures and most of the data are collected using web scrapping which involves using automated software or scripts to retrieve specific information from web pages, such as text, images, tables, or other structured data.
-The application is developed using Flutter an open-source UI (User Interface) toolkit developed by Google. It allows developers to build natively compiled applications for mobile, web, and desktop platforms from a single codebase. Flutter uses the Dart programming language
+The application is developed using Flutter 
 The model is developed using the following The model is developed using image processing library (PIL, openCV), pandas for data manipulation, matplotlib for visualization, machine learning frameworks (tensorflow, keras, sklearn), convolutional neural network model 
 
 
