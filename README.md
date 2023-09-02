@@ -13,10 +13,12 @@ The model is developed using the following The model is developed using image pr
 
 
 # Features of the Application
-### Make a conversation with the user so that the model can have a better understanding of the user status and provide user-specific suggestions  
+### Make a conversation with the user so that the model can have a better understanding of the user's status and provide user-specific suggestions  
 ### Take an eye Image of the given person to provide a learned guess of the trachoma case by processing it on the pre-trained model. 
 ###  In addition it will also analyze the person's location, gender, and family case status to predict more accurately 
 
 # How to use the application 
-We try to make it as simple as possible because we aimed particularly in developing regions with limited access of Information and Techonlogy.
+We try to make it as simple as possible because we aim particularly at developing regions with limited access to Information and technology.
+## 1. First, the user should know his age, past eye issues, location, and gender which could be the factor of the disease. 
+![Image one with the input](clearSight/data/"iPhone 14 - 1.png")
 
