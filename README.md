@@ -2,9 +2,12 @@
 Clear Sight is a mobile application that is used to detect Trachoma by using a machine learning model.
 
 # Aim of the Project
-The aim of developing a trachoma detector application is to leverage technology to assist in the early detection and diagnosis of trachoma, a contagious eye disease caused by the bacterium Chlamydia trachomatis. Trachoma is a leading cause of preventable blindness worldwide, particularly in developing regions with limited access to healthcare resources.
+<p> The aim of developing a trachoma detector application is to leverage technology to assist in the early detection and diagnosis of trachoma, a contagious eye disease caused by the bacterium Chlamydia trachomatis. Trachoma is a leading cause of preventable blindness worldwide, particularly in developing regions with limited access to healthcare resources.
+</p>
+<p>
 The trachoma detector application utilizes computer vision and machine learning algorithms to analyze images of the eye and detect signs of trachoma infection. By capturing images of the eye using a smartphone or other imaging device, the application can identify specific indicators of trachoma, such as trachomatous inflammation-follicular (TF) or trachomatous inflammation-intense (TI), which are used in the clinical diagnosis of the disease.
 Overall, the aim of developing a trachoma detector application is to leverage technology to improve the accessibility, efficiency, and accuracy of trachoma screening and diagnosis. By doing so, it can contribute to the global efforts to eliminate trachoma as a public health problem and reduce the burden of preventable blindness.
+</p>
 
 # How Does It Work
 This model is trained with more than 1,500 pictures and most of the data are collected using web scrapping which involves using automated software or scripts to retrieve specific information from web pages, such as text, images, tables, or other structured data.
