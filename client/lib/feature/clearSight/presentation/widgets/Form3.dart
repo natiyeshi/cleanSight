@@ -39,9 +39,7 @@ class _Form3State extends State<Form3> {
         _image = File(image.path);
       });
     } catch (e) {
-      print("------");
       print(e);
-      print("------");
     }
   }
 
@@ -76,6 +74,9 @@ class _Form3State extends State<Form3> {
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
+                      color: _image != null
+                          ? Theme.of(context).primaryColor
+                          : Colors.white,
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(5),
                     ),
@@ -86,36 +87,17 @@ class _Form3State extends State<Form3> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Text(
-                        "Browse Gallery",
+                        "Upload Photo",
                         style: TextStyle(
-                          color: Theme.of(context).primaryColor,
+                          color: _image == null
+                              ? Theme.of(context).primaryColor
+                              : Colors.white,
                           fontSize: 17,
                         ),
                       ),
                     ),
                   ),
                   SizedBox(height: 10),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: RawMaterialButton(
-                      onPressed: null,
-                      padding: EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Text(
-                        "Take Photo",
-                        style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 17,
-                        ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -148,9 +130,7 @@ class _Form3State extends State<Form3> {
                   Expanded(
                     child: RawMaterialButton(
                       onPressed: () {
-                        context.read<PhotoBloc>().add(UploadImage(
-                          _image
-                        ));
+                        context.read<PhotoBloc>().add(UploadImage(_image));
                       },
                       padding: EdgeInsets.symmetric(vertical: 14),
                       fillColor: Theme.of(context).primaryColor,

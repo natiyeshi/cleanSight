@@ -18,21 +18,20 @@ class _Form2State extends State<Form2> {
   Choice? selectedChoice, selectIssue;
 
   List<String> symptomes = [
+    "Eye redness",
+    "irritation",
+    "Itchy eyes",
+    "Swollen eyelids",
+    "Watery eyes",
+    "Eye pain or discomfort",
+    "photophobia",
+    "Blurred vision",
+    "Dry eyes",
+    "Crusting of the eyelashes",
+    "Eyelid scarring",
     "swelling",
-    "irritation" "eye redness",
-    "itching",
+    "irritation",
     "Tick Discharge",
-    "itching",
-    "swelling",
-    "irritation" "eye redness",
-    "itching",
-    "Tick Discharge",
-    "swelling",
-    "itching",
-    "irritation" "eye redness",
-    "itching",
-    "Tick Discharge",
-    "swelling",
   ];
 
   @override
@@ -68,46 +67,6 @@ class _Form2State extends State<Form2> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 13),
-                    child: Text(
-                      "Do your family members or friends  experience trachoma ?",
-                      style: TextStyle(fontSize: 17),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Row(
-                        children: [
-                          Radio<Choice>(
-                            value: Choice.yes,
-                            groupValue: selectIssue,
-                            onChanged: (value) {
-                              setState(() {
-                                selectIssue = value;
-                              });
-                            },
-                          ),
-                          Text('Yes'),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Radio<Choice>(
-                            value: Choice.no,
-                            groupValue: selectIssue,
-                            onChanged: (value) {
-                              setState(() {
-                                selectIssue = value;
-                              });
-                            },
-                          ),
-                          Text('No'),
-                        ],
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),

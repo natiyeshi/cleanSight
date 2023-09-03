@@ -13,8 +13,11 @@ class Form1 extends StatefulWidget {
 
 enum Gender { male, female }
 
+enum Choice { yes, no }
+
 class _Form1State extends State<Form1> {
-  Gender? selectedGender, selectIssue;
+  Choice? eyeIssue, familyIsuee;
+  Gender? selectedGender;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PhotoBloc, PhotoState>(
@@ -46,12 +49,12 @@ class _Form1State extends State<Form1> {
                     children: [
                       Row(
                         children: [
-                          Radio<Gender>(
-                            value: Gender.male,
-                            groupValue: selectIssue,
+                          Radio<Choice>(
+                            value: Choice.yes,
+                            groupValue: eyeIssue,
                             onChanged: (value) {
                               setState(() {
-                                selectIssue = value;
+                                eyeIssue = value;
                               });
                             },
                           ),
@@ -60,12 +63,12 @@ class _Form1State extends State<Form1> {
                       ),
                       Row(
                         children: [
-                          Radio<Gender>(
-                            value: Gender.female,
-                            groupValue: selectIssue,
+                          Radio<Choice>(
+                            value: Choice.no,
+                            groupValue: eyeIssue,
                             onChanged: (value) {
                               setState(() {
-                                selectIssue = value;
+                                eyeIssue = value;
                               });
                             },
                           ),
@@ -76,41 +79,42 @@ class _Form1State extends State<Form1> {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    "Location",
+                    "Do you have a family member or friend experience trachoma ?",
                     style: TextStyle(fontSize: 17),
                   ),
                   SizedBox(height: 20),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        color: const Color.fromARGB(255, 97, 95, 95),
-                        width: 2.0,
-                      ),
-                    ),
-                    child: const RawMaterialButton(
-                      onPressed: null,
-                      padding: EdgeInsets.symmetric(vertical: 12),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Row(
                         children: [
-                          Icon(
-                            Icons.location_on,
-                            size: 23.0,
-                            color: Color.fromARGB(255, 134, 134, 134),
+                          Radio<Choice>(
+                            value: Choice.yes,
+                            groupValue: familyIsuee,
+                            onChanged: (value) {
+                              setState(() {
+                                familyIsuee = value;
+                              });
+                            },
                           ),
-                          // SizedBox(width: 4),
-                          Text(
-                            "Pick",
-                            style: TextStyle(
-                              color: const Color.fromARGB(255, 97, 95, 95),
-                              fontSize: 17,
-                            ),
-                          ),
+                          Text('Yes'),
                         ],
                       ),
-                    ),
+                      Row(
+                        children: [
+                          Radio<Choice>(
+                            value: Choice.no,
+                            groupValue: familyIsuee,
+                            onChanged: (value) {
+                              setState(() {
+                                familyIsuee = value;
+                              });
+                            },
+                          ),
+                          Text('No'),
+                        ],
+                      ),
+                    ],
                   ),
                   SizedBox(height: 30),
                   Text(

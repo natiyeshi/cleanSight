@@ -12,6 +12,7 @@ class _CustomeInputState extends State<CustomeInput> {
   Widget build(BuildContext context) {
     return const TextField(
       onChanged: null,
+      keyboardType: TextInputType.number,
       decoration: InputDecoration(
           labelText: "Insert Your Age",
           border: OutlineInputBorder(),

@@ -26,15 +26,31 @@ class _Form4State extends State<Form4> {
               padding: EdgeInsets.only(top: 10, left: 40, right: 40),
               child: Column(
                 children: [
+                  const SizedBox(height: 100),
+                  const Text(
+                    "Result",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
                   Container(
-                      height: 300,
-                      child: Center(
-                        child: Text(
-                            state is Form4State
-                                ? state.result.toString()
-                                : "message",
-                            style: TextStyle(fontSize: 18)),
-                      )),
+                    height: 300,
+                    child: state is Form4State
+                        ? Text(
+                            "you have " +
+                                (state.result["class_probabilities"]
+                                            [state.result["predicted_class"]] *
+                                        100)
+                                    .toString()
+                                    .substring(0, 6) +
+                                "% of chance to be ${state.result['predicted_class'] == 0 ? 'affected' : 'healthy'} ",
+                            style: TextStyle(fontSize: 18))
+                        : state is Loading
+                            ? Center(child: CircularProgressIndicator())
+                            : Text("something goes wrong!!",
+                                style: TextStyle(fontSize: 18)),
+                  ),
                   SizedBox(height: 10),
                 ],
               ),
@@ -76,7 +92,7 @@ class _Form4State extends State<Form4> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Text(
-                        "Next",
+                        "Finalize",
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.onPrimary,
                           fontSize: 17,

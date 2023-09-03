@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
               index = 2;
               current = pages[2];
             }
-            if (state is Form4State) {
+            if (state is Loading) {
               index = 3;
               current = pages[3];
             }
