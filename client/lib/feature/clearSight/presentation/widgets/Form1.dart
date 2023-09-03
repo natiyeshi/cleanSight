@@ -79,7 +79,7 @@ class _Form1State extends State<Form1> {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    "Do you have a family member or friend experience trachoma ?",
+                    "Do you have a family member or friend that experiences trachoma ?",
                     style: TextStyle(fontSize: 17),
                   ),
                   SizedBox(height: 20),
@@ -136,7 +136,7 @@ class _Form1State extends State<Form1> {
                               });
                             },
                           ),
-                          Text('Yes'),
+                          Text('Male'),
                         ],
                       ),
                       Row(
@@ -150,7 +150,7 @@ class _Form1State extends State<Form1> {
                               });
                             },
                           ),
-                          Text('No'),
+                          Text('Female'),
                         ],
                       ),
                     ],

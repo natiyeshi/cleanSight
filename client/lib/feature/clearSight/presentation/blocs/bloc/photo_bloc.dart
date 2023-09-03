@@ -28,7 +28,6 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
       try {
         emit(Loading());
         List result = await submitSubscription(file: event.file);
-        await Future.delayed(const Duration(seconds: 3));
         emit(Form4State(result[1]));
       } catch (e) {
         emit(Error());

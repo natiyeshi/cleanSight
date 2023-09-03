@@ -44,7 +44,7 @@ class _Form4State extends State<Form4> {
                                         100)
                                     .toString()
                                     .substring(0, 6) +
-                                "% of chance to be ${state.result['predicted_class'] == 0 ? 'affected' : 'healthy'} ",
+                                "% of chance to be ${state.result['predicted_class'] == 0 ? 'affected, so please try to contact the nearest health center' : 'healthy'} ",
                             style: TextStyle(fontSize: 18))
                         : state is Loading
                             ? Center(child: CircularProgressIndicator())

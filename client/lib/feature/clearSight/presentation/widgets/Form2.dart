@@ -29,9 +29,9 @@ class _Form2State extends State<Form2> {
     "Dry eyes",
     "Crusting of the eyelashes",
     "Eyelid scarring",
-    "swelling",
-    "irritation",
     "Tick Discharge",
+    "Visual impairment",
+    "Eyelid inflammation"
   ];
 
   @override
