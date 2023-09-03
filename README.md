@@ -16,9 +16,9 @@ The model is developed using the following The model is developed using image pr
 
 
 # Features of the Application
-### Make a conversation with the user so that the model can have a better understanding of the user status and provide user-specific suggestions  
-### Take an eye Image of the given person to provide a learned guess of the trachoma case by processing it on the pre-trained model. 
-###  In addition it will also analyze the person's location, gender, and family case status to predict more accurately 
+# Make a conversation with the user so that the model can have a better understanding of the user status and provide user-specific suggestions  
+# Take an eye Image of the given person to provide a learned guess of the trachoma case by processing it on the pre-trained model. 
+#  In addition it will also analyze the person's location, gender, and family case status to predict more accurately 
 
 # How to use the application 
 We try to make it as simple as possible because we aimed particularly in developing regions with limited access of Information and Techonlogy.
