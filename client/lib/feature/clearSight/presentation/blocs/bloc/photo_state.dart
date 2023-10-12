@@ -35,18 +35,18 @@ class Form4State extends PhotoState {
   List<Object?> get props => [result];
 }
 
-class Loading extends PhotoState{
+class Loading extends PhotoState {
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
-
 }
 
-class Error extends PhotoState{
-  @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+class Error extends PhotoState {
+  String? message;
+  Error({this.message});
 
+  @override
+  List<Object?> get props => [message];
 }
 
 class UploadImage extends PhotoEvent {

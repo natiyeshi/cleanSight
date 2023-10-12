@@ -7,12 +7,14 @@ class Line extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 60.0,
+    return AnimatedContainer(
+      width: 70.0,
       height: 2.0,
       color: flag == false
-          ? Colors.grey
-          : Theme.of(context).colorScheme.primary, // Set the desired color
+          ? const Color.fromARGB(255, 196, 196, 196)
+          : Theme.of(context).colorScheme.primary,
+      duration: Duration(seconds: 1),
+      // Set the desired color
     );
   }
 }

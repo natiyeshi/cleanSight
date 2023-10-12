@@ -28,10 +28,10 @@ class _Form3State extends State<Form3> {
     imagePicker = new ImagePicker();
   }
 
-  Future pickImager() async {
+  Future pickImager(bool camera) async {
     try {
       XFile image = await imagePicker.pickImage(
-        source: ImageSource.gallery,
+        source: camera ? ImageSource.camera : ImageSource.gallery,
         imageQuality: 50,
         preferredCameraDevice: CameraDevice.front,
       );
@@ -55,7 +55,7 @@ class _Form3State extends State<Form3> {
               child: Column(
                 children: [
                   Container(
-                    color: Color.fromARGB(255, 221, 217, 217),
+                    // color: Theme.of(context).colorScheme.secondaryContainer,
                     height: 300,
                     child: _image != null
                         ? Image.file(
@@ -65,8 +65,11 @@ class _Form3State extends State<Form3> {
                             fit: BoxFit.cover,
                           )
                         : Center(
-                            child: Text("upload image",
-                                style: TextStyle(fontSize: 18)),
+                            child: Icon(
+                              Icons.wallpaper,
+                              size: 150,
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                   ),
                   SizedBox(height: 10),
@@ -74,14 +77,12 @@ class _Form3State extends State<Form3> {
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: _image != null
-                          ? Theme.of(context).primaryColor
-                          : Colors.white,
+                      color: Colors.white,
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: RawMaterialButton(
-                      onPressed: () => pickImager(),
+                      onPressed: () => pickImager(false),
                       padding: EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
@@ -89,9 +90,30 @@ class _Form3State extends State<Form3> {
                       child: Text(
                         "Upload Photo",
                         style: TextStyle(
-                          color: _image == null
-                              ? Theme.of(context).primaryColor
-                              : Colors.white,
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: RawMaterialButton(
+                      onPressed: () => pickImager(true),
+                      padding: EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Text(
+                        "take photo",
+                        style: TextStyle(
+                          color: Theme.of(context).primaryColor,
                           fontSize: 17,
                         ),
                       ),
@@ -113,14 +135,15 @@ class _Form3State extends State<Form3> {
                         context.read<PhotoBloc>().add(Form2Event());
                       },
                       padding: EdgeInsets.symmetric(vertical: 14),
-                      fillColor: Colors.grey,
+                      fillColor:
+                          Theme.of(context).colorScheme.secondaryContainer,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Text(
                         "Back",
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: Colors.black,
                           fontSize: 17,
                         ),
                       ),
@@ -130,10 +153,15 @@ class _Form3State extends State<Form3> {
                   Expanded(
                     child: RawMaterialButton(
                       onPressed: () {
+                        if (_image == null) {
+                          return;
+                        }
                         context.read<PhotoBloc>().add(UploadImage(_image));
                       },
                       padding: EdgeInsets.symmetric(vertical: 14),
-                      fillColor: Theme.of(context).primaryColor,
+                      fillColor: _image == null
+                          ? Colors.grey
+                          : Theme.of(context).primaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),

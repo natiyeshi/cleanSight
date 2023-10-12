@@ -48,11 +48,12 @@ class _Form2State extends State<Form2> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 20),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
-                      "Select your symptomes",
-                      style: TextStyle(fontSize: 17),
+                      "select your symptomes",
+                      style: TextStyle(fontSize: 19),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -82,14 +83,15 @@ class _Form2State extends State<Form2> {
                         context.read<PhotoBloc>().add(Form1Event());
                       },
                       padding: EdgeInsets.symmetric(vertical: 14),
-                      fillColor: Colors.grey,
+                      fillColor:
+                          Theme.of(context).colorScheme.secondaryContainer,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Text(
                         "Back",
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: Colors.black,
                           fontSize: 17,
                         ),
                       ),

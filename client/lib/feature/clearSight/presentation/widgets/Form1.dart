@@ -40,7 +40,7 @@ class _Form1State extends State<Form1> {
                   CustomeInput(),
                   SizedBox(height: 30),
                   Text(
-                    "Do You Have Past Eye Issues ?",
+                    "Gender",
                     style: TextStyle(fontSize: 17),
                   ),
                   SizedBox(height: 10),
@@ -49,35 +49,35 @@ class _Form1State extends State<Form1> {
                     children: [
                       Row(
                         children: [
-                          Radio<Choice>(
-                            value: Choice.yes,
-                            groupValue: eyeIssue,
+                          Radio<Gender>(
+                            value: Gender.male,
+                            groupValue: selectedGender,
                             onChanged: (value) {
                               setState(() {
-                                eyeIssue = value;
+                                selectedGender = value;
                               });
                             },
                           ),
-                          Text('Yes'),
+                          Text('Male'),
                         ],
                       ),
                       Row(
                         children: [
-                          Radio<Choice>(
-                            value: Choice.no,
-                            groupValue: eyeIssue,
+                          Radio<Gender>(
+                            value: Gender.female,
+                            groupValue: selectedGender,
                             onChanged: (value) {
                               setState(() {
-                                eyeIssue = value;
+                                selectedGender = value;
                               });
                             },
                           ),
-                          Text('No'),
+                          Text('Female'),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 30),
                   Text(
                     "Do you have a family member or friend that experiences trachoma ?",
                     style: TextStyle(fontSize: 17),
@@ -112,45 +112,6 @@ class _Form1State extends State<Form1> {
                             },
                           ),
                           Text('No'),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 30),
-                  Text(
-                    "Gender",
-                    style: TextStyle(fontSize: 17),
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Row(
-                        children: [
-                          Radio<Gender>(
-                            value: Gender.male,
-                            groupValue: selectedGender,
-                            onChanged: (value) {
-                              setState(() {
-                                selectedGender = value;
-                              });
-                            },
-                          ),
-                          Text('Male'),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Radio<Gender>(
-                            value: Gender.female,
-                            groupValue: selectedGender,
-                            onChanged: (value) {
-                              setState(() {
-                                selectedGender = value;
-                              });
-                            },
-                          ),
-                          Text('Female'),
                         ],
                       ),
                     ],

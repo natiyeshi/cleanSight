@@ -1,6 +1,7 @@
 import 'package:client/feature/clearSight/presentation/blocs/bloc/photo_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'loading.dart' as LoadingWidget;
 
 class Form4 extends StatefulWidget {
   Form4({super.key, this.nextPage, this.backPage, this.message});
@@ -47,7 +48,7 @@ class _Form4State extends State<Form4> {
                                 "% of chance to be ${state.result['predicted_class'] == 0 ? 'affected, so please try to contact the nearest health center' : 'healthy'} ",
                             style: TextStyle(fontSize: 18))
                         : state is Loading
-                            ? Center(child: CircularProgressIndicator())
+                            ? LoadingWidget.Loading(color: false)
                             : Text("something goes wrong!!",
                                 style: TextStyle(fontSize: 18)),
                   ),

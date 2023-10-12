@@ -1,4 +1,7 @@
 import 'package:client/feature/clearSight/presentation/blocs/bloc/photo_bloc.dart';
+import 'package:client/feature/clearSight/presentation/blocs/bloc/splash.dart';
+import 'package:client/feature/clearSight/presentation/screens/seeai.dart';
+import 'package:client/feature/clearSight/presentation/screens/welcome.dart';
 import 'package:flutter/material.dart';
 import "./feature/clearSight/presentation/screens/home.dart";
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,10 +22,10 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demso',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF51E6EB)),
+          colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF199A8E)),
           useMaterial3: true,
         ),
-        home: const Home(),
+        home: Splash(),
       ),
     );
   }

@@ -30,7 +30,7 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
         List result = await submitSubscription(file: event.file);
         emit(Form4State(result[1]));
       } catch (e) {
-        emit(Error());
+        emit(Error(message : e.toString()));
       }
     });
   }

@@ -1,4 +1,5 @@
 import 'package:client/feature/clearSight/presentation/blocs/bloc/photo_bloc.dart';
+import 'package:client/feature/clearSight/presentation/widgets/result.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/progress.dart';
@@ -26,7 +27,8 @@ class _HomeState extends State<Home> {
       Form1(),
       Form2(),
       Form3(),
-      Form4(message: "message"),
+      // Form4(message: "hiiii"),
+      Result(),
     ];
     super.initState();
   }
@@ -38,28 +40,15 @@ class _HomeState extends State<Home> {
     if (index == 0) return;
     index--;
     setState(() {
-      // if (index == 2) {
-      //   current = Form3(upload: send);
-      // } else if (index == 3) {
-      //   send = true;
-      // } else {
       current = pages[index];
-      // }
     });
   }
 
   void nextPage() {
-    print("next");
     if (index == 3) return;
     index++;
     setState(() {
-      // if (index == 2) {
-      //   current = Form3(upload: send);
-      // } else if (index == 3) {
-      //   send = true;
-      // } else {
       current = pages[index];
-      // }
     });
   }
 
