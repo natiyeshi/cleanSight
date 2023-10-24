@@ -234,17 +234,19 @@ class _SeeAiState extends State<SeeAi> {
             ? Center(
                 child: Container(
                 width: MediaQuery.of(context).size.width * .7,
-                height: 100,
+                height: 300,
                 decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondaryContainer,
+                    // color: Theme.of(context).colorScheme.secondaryContainer,
                     // border: Border.all(
                     //     color: Theme.of(context).colorScheme.primary),
                     borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                    child: Text(
-                  "Send Your First Message!",
-                  style: TextStyle(fontSize: 18),
-                )),
+                child: Column(children: [
+                  Image.asset(
+                    "assets/images/icon2.png",
+                  ),
+                  SizedBox(height: 10),
+                  Text("Hi there, what can i help you ? ")
+                ]),
               ))
             : ListView.builder(
                 controller: _scrollController,

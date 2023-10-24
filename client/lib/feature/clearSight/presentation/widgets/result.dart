@@ -62,7 +62,7 @@ class _ResultState extends State<Result> {
                                             builder: (_) => Home()));
                                   },
                                   child: Text(
-                                    "retake",
+                                    "Retake",
                                     style: TextStyle(
                                         color: const Color.fromARGB(
                                             255, 134, 134, 134)),
@@ -175,7 +175,9 @@ class _ResultState extends State<Result> {
           ),
           SizedBox(height: 15),
           Text(
-            "you have $percent chance",
+            negative
+                ? "Our model indicates a ${percent.toString().substring(0, 4)}% likelihood that you do not have trachoma. However, it's essential to maintain good eye hygiene and seek medical advice if you experience any symptoms or concerns. "
+                : "Trachoma Detected: Our model indicates a  ${percent.toString().substring(0, 4)}% likelihood of trachoma. We recommend seeking immediate medical attention for further evaluation and treatment",
             style: TextStyle(
               color: negative ? Colors.white : Colors.black,
               // fontWeight: FontWeight.w300,

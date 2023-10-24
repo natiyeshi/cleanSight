@@ -42,7 +42,8 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
       ///MultiPart request
       var request = http.MultipartRequest(
         'POST',
-        Uri.parse("http://192.168.137.1:8000/"),
+        Uri.parse("https://hackethon-api.onrender.com"),
+        // Uri.parse("http://192.168.137.1:8000/"),
       );
       Map<String, String> headers = {"Content-type": "multipart/form-data"};
       request.files.add(

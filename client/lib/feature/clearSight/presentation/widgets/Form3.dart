@@ -88,7 +88,7 @@ class _Form3State extends State<Form3> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Text(
-                        "Upload Photo",
+                        "Upload Image",
                         style: TextStyle(
                           color: Theme.of(context).primaryColor,
                           fontSize: 17,
@@ -111,7 +111,7 @@ class _Form3State extends State<Form3> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Text(
-                        "take photo",
+                        "Take Image",
                         style: TextStyle(
                           color: Theme.of(context).primaryColor,
                           fontSize: 17,

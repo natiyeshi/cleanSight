@@ -50,26 +50,18 @@ class Welcome extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 190,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    itemBuilder: (cont, ind) {
-                      return pageShow(context);
-                    }),
-              ),
-              const SizedBox(height: 25),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Bullet(false, context),
-                  const SizedBox(width: 10),
-                  Bullet(true, context),
-                  const SizedBox(width: 10),
-                  Bullet(false, context),
-                ],
-              ),
+              pageShow(context),
+              const SizedBox(height: 5),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Bullet(false, context),
+              //     const SizedBox(width: 10),
+              //     Bullet(true, context),
+              //     const SizedBox(width: 10),
+              //     Bullet(false, context),
+              //   ],
+              // ),
               const SizedBox(height: 30),
               Center(
                 child: Container(
@@ -102,7 +94,7 @@ class Welcome extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.only(left: 15),
                 child: Text(
-                  "FAQs",
+                  "Related Topics",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -222,21 +214,23 @@ class Welcome extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Expanded(
+          Expanded(
             flex: 4,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Service",
+                const Text(
+                  "Welcome",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  "i have suffering from headache and suffering from headache and cold",
-                ),
+                CheckPoint("Fast trachoma detection"),
+                SizedBox(height: 4),
+                CheckPoint("Bot, that you can consult"),
+                SizedBox(height: 4),
+                CheckPoint("Helpfull QAs"),
               ],
             ),
           ),
@@ -248,6 +242,18 @@ class Welcome extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget CheckPoint(String text) {
+    return Row(
+      children: [
+        Icon(Icons.check),
+        SizedBox(width: 10),
+        Text(
+          text,
+        ),
+      ],
     );
   }
 

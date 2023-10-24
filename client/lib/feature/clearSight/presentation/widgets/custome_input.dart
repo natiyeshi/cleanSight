@@ -14,8 +14,7 @@ class _CustomeInputState extends State<CustomeInput> {
       onChanged: null,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-          labelText: "Insert Your Age",
-          border: OutlineInputBorder(),
+          border: UnderlineInputBorder(),
           labelStyle: TextStyle(
             fontSize: 15,
           )),

@@ -42,7 +42,7 @@ class ChatLayer {
       request.headers.addAll({
         'Content-Type': 'application/json',
         'Authorization':
-            'Bearer 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',
+            'Bearer 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',
       });
       List<dynamic> contextData = [];
       for (int i = contexts.length - 1; i > -1; i--) {
@@ -57,8 +57,9 @@ class ChatLayer {
       final requestBody = {
         'model': 'gpt-3.5-turbo',
         'messages': [
-          {'role': 'system', 'content': 'You are a helpful assistant.'},
-          // Include previous conversation context
+          {'role': 'user', 'content': 'your name is seeai bot. do not answer any thing other than trachoma related questions.'},
+          {'role': 'system', 'content': 'ok'},
+         
           ...kk,
         ],
       };
